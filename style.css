@@ -1,0 +1,389 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #FF6B35;
+    --primary-dark: #E55A2B;
+    --secondary: #004E89;
+    --light-bg: #F5F7FA;
+    --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    --border-radius: 12px;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    background-color: var(--light-bg);
+    color: #333;
+}
+
+#app {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 16px;
+}
+
+header {
+    background: linear-gradient(135deg, var(--secondary), #0077B6);
+    color: white;
+    padding: 16px 20px;
+    border-radius: var(--border-radius);
+    margin-bottom: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 24px;
+}
+
+header p {
+    opacity: 0.9;
+    font-size: 14px;
+}
+
+#location-status {
+    background: rgba(255,255,255,0.2);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+#location-status.success {
+    background: #2ECC71;
+}
+
+#location-status.error {
+    background: #E74C3C;
+}
+
+#campus-selector {
+    background: white;
+    padding: 16px 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    margin-bottom: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+}
+
+#campus-selector label {
+    font-weight: 600;
+    color: var(--secondary);
+}
+
+#campusSelect {
+    flex: 1;
+    min-width: 180px;
+    padding: 10px 16px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    background: white;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+#campusSelect:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+#info-panel {
+    margin-bottom: 16px;
+}
+
+#campus-info {
+    background: white;
+    padding: 12px 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+}
+
+#campus-info h2 {
+    color: var(--secondary);
+    font-size: 20px;
+    margin-bottom: 4px;
+}
+
+#stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 14px;
+    color: #666;
+}
+
+#stats span {
+    background: var(--light-bg);
+    padding: 4px 12px;
+    border-radius: 20px;
+}
+
+#stats .highlight {
+    background: var(--primary);
+    color: white;
+    font-weight: 600;
+}
+
+#main-content {
+    display: flex;
+    gap: 16px;
+    min-height: 500px;
+}
+
+#map-container {
+    flex: 2;
+    background: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    position: relative;
+}
+
+#map {
+    height: 100%;
+    min-height: 500px;
+    width: 100%;
+}
+
+#micro-list-container {
+    flex: 1;
+    min-width: 250px;
+    max-height: 600px;
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 16px 20px;
+    box-shadow: var(--card-shadow);
+    overflow-y: auto;
+}
+
+#micro-list-container h3 {
+    color: var(--secondary);
+    font-size: 16px;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--light-bg);
+}
+
+#microList {
+    list-style: none;
+}
+
+#microList li {
+    background: var(--light-bg);
+    padding: 10px 14px;
+    margin-bottom: 6px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s;
+    border-left: 4px solid var(--primary);
+    cursor: default;
+    animation: slideIn 0.3s ease-out;
+}
+
+#microList li:hover {
+    transform: translateX(4px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+#microList li .distance-badge {
+    background: var(--secondary);
+    color: white;
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+#microList li .distance-badge.nearest {
+    background: #2ECC71;
+    animation: pulse-badge 1.5s infinite;
+}
+
+#microList li .position-number {
+    background: #ddd;
+    color: #666;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    margin-right: 10px;
+}
+
+#microList li .name-container {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+#microList li .name-container .mic-icon {
+    margin-right: 8px;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-10px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulse-badge {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1); }
+}
+
+.hidden {
+    display: none !important;
+}
+
+footer {
+    text-align: center;
+    padding: 16px;
+    color: #888;
+    font-size: 13px;
+    margin-top: 16px;
+}
+
+/* Estilos Leaflet */
+.leaflet-popup-content {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+}
+
+.leaflet-popup-content-wrapper {
+    border-radius: 8px;
+}
+
+/* Marcadores personalizados más grandes */
+.custom-marker {
+    background: var(--primary);
+    border: 3px solid white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.custom-marker:hover {
+    transform: scale(1.2);
+}
+
+.custom-marker.nearest {
+    background: #2ECC71;
+    border: 4px solid #27AE60;
+    width: 48px;
+    height: 48px;
+    font-size: 24px;
+    animation: pulse-marker 2s infinite;
+    z-index: 1000 !important;
+}
+
+@keyframes pulse-marker {
+    0% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.5); }
+    70% { box-shadow: 0 0 0 20px rgba(46, 204, 113, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0); }
+}
+
+.user-marker {
+    font-size: 32px;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    #main-content {
+        flex-direction: column;
+    }
+    
+    #map {
+        min-height: 400px;
+    }
+    
+    #micro-list-container {
+        max-height: 300px;
+        min-width: unset;
+    }
+}
+
+@media (max-width: 768px) {
+    #app {
+        padding: 10px;
+    }
+
+    header {
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
+        padding: 14px;
+    }
+
+    header h1 {
+        font-size: 20px;
+    }
+
+    #campus-selector {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #campusSelect {
+        width: 100%;
+    }
+
+    #map {
+        min-height: 300px;
+    }
+    
+    #micro-list-container {
+        max-height: 250px;
+    }
+
+    #stats {
+        flex-direction: column;
+        gap: 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    #map {
+        min-height: 250px;
+    }
+    
+    #micro-list-container {
+        max-height: 200px;
+        padding: 12px 14px;
+    }
+    
+    #microList li {
+        padding: 8px 10px;
+        font-size: 13px;
+    }
+}

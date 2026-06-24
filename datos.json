@@ -1,0 +1,62 @@
+{
+  "campus": [
+    {
+      "id": "badajoz",
+      "nombre": "Badajoz",
+      "centro": { "lat": 38.8793, "lng": -6.9706 },
+      "microondas": [
+        { "id": 1, "nombre": "Facultad de Ciencias", "lat": 38.8845, "lng": -7.00891 },
+        { "id": 2, "nombre": "Facultad de Medicina y Ciencias de la Salud", "lat": 38.88518, "lng": -7.00033 },
+        { "id": 3, "nombre": "Facultad de Educación y Psicología", "lat": 38.88556, "lng": -7.01196 },
+        { "id": 4, "nombre": "Facultad de Ciencias Económicas y Empresariales", "lat": 38.8792, "lng": -6.97386 },
+        { "id": 5, "nombre": "Facultad de Ciencias de la Documentación y la Comunicación", "lat": 38.8792, "lng": -6.97386 },
+        { "id": 6, "nombre": "Escuela de Ingenierías Agrarias", "lat": 38.895045, "lng": -6.9693144 },
+        { "id": 7, "nombre": "Escuela de Ingenierías Industriales", "lat": 38.8840, "lng": -7.0031 }
+      ]
+    },
+    {
+      "id": "caceres",
+      "nombre": "Cáceres",
+      "centro": { "lat": 39.4762, "lng": -6.3704 },
+      "microondas": [
+        { "id": 8, "nombre": "Facultad de Ciencias del Deporte", "lat": 39.481935, "lng": -6.343921 },
+        { "id": 9, "nombre": "Facultad de Derecho", "lat": 39.477627, "lng": -6.338466 },
+        { "id": 10, "nombre": "Facultad de Enfermería y Terapia Ocupacional", "lat": 39.4770, "lng": -6.3370 },
+        { "id": 11, "nombre": "Facultad de Empresa, Finanzas y Turismo", "lat": 39.4770, "lng": -6.3370 },
+        { "id": 12, "nombre": "Facultad de Filosofía y Letras", "lat": 39.4769, "lng": -6.3367 },
+        { "id": 13, "nombre": "Facultad de Formación del Profesorado", "lat": 39.4770, "lng": -6.3370 },
+        { "id": 14, "nombre": "Facultad de Veterinaria", "lat": 39.48012, "lng": -6.346664 },
+        { "id": 15, "nombre": "Escuela Politécnica", "lat": 39.47852, "lng": -6.3384 }
+      ]
+    },
+     
+    {
+      "id": "merida",
+      "nombre": "Mérida",
+      "centro": { "lat": 38.9069, "lng": -6.3394 },
+      "microondas": [
+        { "id": 16, "nombre": "Centro Universitario de Mérida - Edificio Administrativo", "lat": 38.9069, "lng": -6.3394 },
+        { "id": 17, "nombre": "Centro Universitario de Mérida - Edificio 2", "lat": 38.9072, "lng": -6.3397 },
+        { "id": 18, "nombre": "Centro Universitario de Mérida - Edificio 3", "lat": 38.9067, "lng": -6.3391 }
+      ]
+    },
+    {
+      "id": "plasencia",
+      "nombre": "Plasencia",
+      "centro": { "lat": 40.0355, "lng": -6.0839 },
+      "microondas": [
+        { "id": 19, "nombre": "Centro Universitario de Plasencia", "lat": 40.0355278, "lng": -6.0839722 },
+        { "id": 20, "nombre": "Centro Universitario - Clínica Podológica", "lat": 40.0355, "lng": -6.0839 },
+        { "id": 21, "nombre": "Centro Universitario - Pabellón Deportivo", "lat": 40.0358, "lng": -6.0842 }
+      ]
+    },
+    {
+      "id": "almendralejo",
+      "nombre": "Almendralejo",
+      "centro": { "lat": 38.6823, "lng": -6.4102 },
+      "microondas": [
+        { "id": 22, "nombre": "Centro Universitario Santa Ana", "lat": 38.6763333, "lng": -6.3934722 }
+      ]
+    }
+  ]
+}

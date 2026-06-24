@@ -1,0 +1,8 @@
+# Configuración de desarrollo
+.DS_Store
+*.log
+node_modules/
+dist/
+
+# Archivos de sistema
+Thumbs.db

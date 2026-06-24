@@ -1,0 +1,22 @@
+{
+  "name": "buscatumicro",
+  "version": "1.0.0",
+  "description": "Aplicación para encontrar microondas cercanos en campus universitarios",
+  "main": "app.js",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx serve ."
+  },
+  "keywords": [
+    "microondas",
+    "campus",
+    "universidad",
+    "leaflet",
+    "geolocalización"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^14.0.0"
+  }
+}

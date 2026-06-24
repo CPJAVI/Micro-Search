@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>BuscaTuMicro - Encuentra microondas cercanos</title>
+    
+    <!-- CSS de Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>🍔 BuscaTuMicro</h1>
+            <p>Encuentra el microondas más cercano en tu campus</p>
+            <div id="location-status">📍 Obteniendo ubicación...</div>
+        </header>
+
+        <main>
+            <section id="campus-selector">
+                <label for="campusSelect">Selecciona tu campus:</label>
+                <select id="campusSelect">
+                    <option value="">Cargando campus...</option>
+                </select>
+            </section>
+
+            <section id="info-panel">
+                <div id="campus-info" class="hidden">
+                    <h2 id="campusName"></h2>
+                    <div id="stats">
+                        <span id="microCount"></span>
+                        <span id="nearestDistance"></span>
+                    </div>
+                </div>
+            </section>
+
+            <section id="main-content">
+                <div id="map-container">
+                    <div id="map"></div>
+                </div>
+                <aside id="micro-list-container" class="hidden">
+                    <h3>📋 Microondas más cercanos</h3>
+                    <ul id="microList"></ul>
+                </aside>
+            </section>
+        </main>
+
+        <footer>
+            <p>📍 Los microondas se muestran en el mapa. La ubicación se detecta automáticamente.</p>
+            <p style="font-size: 12px; margin-top: 8px;">Datos de mapa © OpenStreetMap contributors | Datos de facultades © Universidad de Extremadura</p>
+        </footer>
+    </div>
+
+    <!-- JavaScript de Leaflet -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
